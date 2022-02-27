@@ -30,12 +30,16 @@ string president;
 
 mapping(uint=>lagosFarmerclub) lagosFarmerclubs;
 mapping(string=>farmClubLocations) allLocations;
-
+address registrar;
+ modifier onlyRegistrar() {
+        require(msg.sender == registrar, "you are not registrar");
+        _;
+    }
 function AddFarmerClub(uint _localgovernment,
 string[] memory _localGovernmentNames,
 uint[] memory _registrationNumbers,
 string calldata _president,
-string calldata ClubName) external{
+string calldata ClubName) external onlyRegistrar{
 farmClubLocations storage F= allLocations[ClubName];
 F.localGovernment = _localgovernment;
 F.localGovernmentNames = _localGovernmentNames;
