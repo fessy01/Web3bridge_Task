@@ -48,11 +48,10 @@ F.president = _president;
 
 
 function viewFarmClubs(string[] calldata localGovernmentNames_, string calldata clubNames_) 
-external view returns (farmClubLocations[] memory farmClubs){
+external pure returns (farmClubLocations[] memory farmClubs){
   farmClubs = new farmClubLocations [](localGovernmentNames_.length);
   for (uint i = 0; i<localGovernmentNames_.length; i++){
-    farmClubLocations storage f=allLocations[clubNames_];
-    
+     clubNames_ = localGovernmentNames_[i];
   
   }
 }
