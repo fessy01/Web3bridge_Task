@@ -51,7 +51,7 @@ function viewFarmClubs(string[] calldata localGovernmentNames_, string calldata 
 external pure returns (farmClubLocations[] memory farmClubs){
   farmClubs = new farmClubLocations [](localGovernmentNames_.length);
   for (uint i = 0; i<localGovernmentNames_.length; i++){
-     clubNames_ = localGovernmentNames_[i];
+     clubNames_ = localGovernmentNames_[i ];
   
   }
 }
